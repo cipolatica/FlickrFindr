@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 }
 
@@ -22,11 +21,13 @@ extension SearchViewController: UISearchBarDelegate {
     
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCollectionViewCell
-        cell.SeachImageView.image = UIImage.init(named: "atg_logo4")
+        cell.searchImageView.image = UIImage.init(named: "atg_logo4")
+        cell.backgroundColor = .green
+        cell.contentView.backgroundColor = .red
         return cell
     }
     
@@ -34,7 +35,14 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return 10
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let widthAndHeight = view.frame.size.width * 0.3
+        return CGSize(width: widthAndHeight, height: widthAndHeight)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(123)
     }
+    
+    
 }

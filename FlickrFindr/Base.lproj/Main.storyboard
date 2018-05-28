@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,13 +49,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="LD5-Dx-OIj" customClass="SearchCollectionViewCell" customModule="FlickrFindr" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="LD5-Dx-OIj" customClass="SearchCollectionViewCell" customModule="FlickrFindr">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-jK-ICS">
+                                                    <rect key="frame" x="11" y="11" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="top" secondItem="LD5-Dx-OIj" secondAttribute="topMargin" constant="3" id="Ukx-a5-E4q"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Qp0-jK-ICS" secondAttribute="trailing" constant="3" id="fw4-Pn-fcS"/>
+                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="leading" secondItem="LD5-Dx-OIj" secondAttribute="leadingMargin" constant="3" id="nCF-r4-sg3"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Qp0-jK-ICS" secondAttribute="bottom" constant="3" id="sWn-ch-ltb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="searchImageView" destination="Qp0-jK-ICS" id="4xK-LW-Jh4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -83,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kn8-oL-7jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="-313"/>
+            <point key="canvasLocation" x="772" y="-313.49325337331339"/>
         </scene>
     </scenes>
 </document>

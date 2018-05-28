@@ -9,20 +9,6 @@
 import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var searchImageView: UIImageView!
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
-    
-    private func commonInit() {
-        
-    }
-
 }
