@@ -8,8 +8,14 @@
 
 import UIKit
 
+/*
+ UIViewController extension.
+ */
 extension UIViewController {
     
+    /*
+     This method is used for UIViewControllers to display error messages.
+     */
     func showError(_ error: Error?, completion: ((UIAlertAction) -> Void)?){
         
         let alert = UIAlertController(title: "Error", message: ErrorUtils.getMessageText(for: error), preferredStyle: .alert)

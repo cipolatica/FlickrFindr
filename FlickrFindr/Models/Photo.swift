@@ -8,6 +8,9 @@
 
 import Foundation
 
+/*
+ Photo model conforming to Flickr's flickr.photos.search API.
+ */
 class Photo {
     
     let farm: Int?

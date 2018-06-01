@@ -10,8 +10,15 @@ import Foundation
 import Alamofire
 import LBTAComponents
 
+/*
+ SearchService is the class used to connect to Flickr API
+ */
+
 class SearchService {
     
+    /*
+     This method is for searching for images against Flickr's API (flickr.photos.search).
+     */
     func fetchPhotos(for text: String, page: Int, completion: @escaping (Photos?, Error?) -> Void) {
         
         let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1508443e49213ff84d566777dc211f2a&page=\(page)&per_page=25&tags=\(text.replacingOccurrences(of: " ", with: ","))&format=json&nojsoncallback=1")

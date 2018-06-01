@@ -9,6 +9,11 @@
 import UIKit
 import UILoadControl
 
+/*
+ SearchViewController is the main view controller for searching for images.
+ This view controller contains a UISearchBar for searching for images with Flickr's API.
+ Also contains a UICollectionView to display image thumbnails from Flickr's API.
+ */
 class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,6 +34,9 @@ class SearchViewController: UIViewController {
         fetchPhotos()
     }
     
+    /*
+     Method for making request to Flickr's API via SearchService class.
+     */
     @objc func fetchPhotos() {
         
         if doesSearchBarHaveText() {
@@ -54,6 +62,9 @@ class SearchViewController: UIViewController {
     }
 }
 
+/*
+ SearchViewController extension for UISearchBarDelegate.
+ */
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -96,6 +107,10 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+/*
+ SearchViewController extension for UIScrollViewDelegate. This delegate is needed
+ for paging more images. This is possible via the UILoadControl pod.
+ */
 extension SearchViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -103,6 +118,9 @@ extension SearchViewController: UIScrollViewDelegate {
     }
 }
 
+/*
+ SearchViewController extension for UICollectionViewDelegate, UICollectionViewDataSource and UICollectionViewDelegateFlowLayout
+ */
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

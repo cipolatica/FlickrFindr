@@ -8,8 +8,14 @@
 
 import Foundation
 
+/*
+ ErrorUtils is used for utilities needed errors.
+ */
 class ErrorUtils {
     
+    /*
+     Constants from Flickr API error codes.
+     */
     static let tooManyTags: Int = 1
     static let unknownUser: Int = 2
     static let parameterlessDisabled: Int = 3
@@ -28,6 +34,9 @@ class ErrorUtils {
     static let methodNotFound: Int = 112
     static let badURLFound: Int = 116
     
+    /*
+     This method provides an error message for the provided error code
+     */
     static func getMessageText(for error: Error?) -> String {
         
         if let error = error as? NSError {

@@ -9,11 +9,17 @@
 import UIKit
 import LBTAComponents
 
+/*
+ SearchCollectionViewCell is the UICollectionViewCell subclass for viewing image thumbnails.
+ */
 class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var searchImageView: UIImageView!
     
     let cachedImageView = CachedImageView()
     
+    /*
+     Update the searchImageView when a Photo object is received.
+     */
     var photo: Photo? {
         didSet {
             guard let photo = photo,
