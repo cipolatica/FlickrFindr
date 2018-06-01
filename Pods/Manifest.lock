@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.7.2)
+  - LBTAComponents (1.0.2)
+  - Result (4.0.0)
+  - UILoadControl (2.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - LBTAComponents (= 1.0.2)
+  - Result (~> 4.0.0)
+  - UILoadControl
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - LBTAComponents
+    - Result
+    - UILoadControl
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  LBTAComponents: c4c8863e0ef6715e378300db148b96a09df656f7
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  UILoadControl: e742ddbe4c67ba1f13b00b7d462d4141307d021f
+
+PODFILE CHECKSUM: dd3e2b614ed0262ffeef55d55891e9e3a33ae987
+
+COCOAPODS: 1.5.3

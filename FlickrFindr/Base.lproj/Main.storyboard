@@ -38,6 +38,9 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h6B-No-3XT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6dn-h0-XKF" id="bV8-kl-Vls"/>
+                                </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5zu-ML-FWF">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
@@ -56,16 +59,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-jK-ICS">
-                                                    <rect key="frame" x="11" y="11" width="128" height="128"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-jK-ICS">
+                                                    <rect key="frame" x="8" y="8" width="134" height="134"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="top" secondItem="LD5-Dx-OIj" secondAttribute="topMargin" constant="3" id="Ukx-a5-E4q"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Qp0-jK-ICS" secondAttribute="trailing" constant="3" id="fw4-Pn-fcS"/>
-                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="leading" secondItem="LD5-Dx-OIj" secondAttribute="leadingMargin" constant="3" id="nCF-r4-sg3"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Qp0-jK-ICS" secondAttribute="bottom" constant="3" id="sWn-ch-ltb"/>
+                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="top" secondItem="LD5-Dx-OIj" secondAttribute="topMargin" id="Ukx-a5-E4q"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Qp0-jK-ICS" secondAttribute="trailing" id="fw4-Pn-fcS"/>
+                                            <constraint firstItem="Qp0-jK-ICS" firstAttribute="leading" secondItem="LD5-Dx-OIj" secondAttribute="leadingMargin" id="nCF-r4-sg3"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Qp0-jK-ICS" secondAttribute="bottom" id="sWn-ch-ltb"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="searchImageView" destination="Qp0-jK-ICS" id="4xK-LW-Jh4"/>
@@ -99,6 +102,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kn8-oL-7jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772" y="-313.49325337331339"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="yEH-p8-XwS">
+            <objects>
+                <viewController storyboardIdentifier="ImageVC" title="Image" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FEn-TT-TIG" customClass="ImageViewController" customModule="FlickrFindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2LQ-tj-6C6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fge-5M-9Sq">
+                                <rect key="frame" x="0.0" y="106" width="375" height="189"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dca-49-bwn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Image" id="SDQ-i2-Ksl"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fge-5M-9Sq" firstAttribute="leading" secondItem="2jr-4z-qON" secondAttribute="leading" id="2tG-oe-ksY"/>
+                            <constraint firstItem="fge-5M-9Sq" firstAttribute="centerY" secondItem="2LQ-tj-6C6" secondAttribute="centerY" id="FrC-Bk-VlS"/>
+                            <constraint firstItem="2jr-4z-qON" firstAttribute="trailing" secondItem="fge-5M-9Sq" secondAttribute="trailing" id="VXU-yH-4D1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2jr-4z-qON"/>
+                    </view>
+                    <connections>
+                        <outlet property="selectedImageView" destination="fge-5M-9Sq" id="C74-NC-p5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1q-Z1-Rut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="-321.58920539730138"/>
         </scene>
     </scenes>
 </document>
